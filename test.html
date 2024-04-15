@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subir Archivo</title>
+<style>
+    #upload-container {
+        width: 200px;
+        height: 100px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 100px;
+        cursor: pointer;
+    }
+    #upload-container:hover {
+        background-color: #e0e0e0;
+    }
+    #file-input {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div id="upload-container" onclick="document.getElementById('file-input').click();">
+    Click aquí para subir un archivo
+</div>
+
+<input type="file" id="file-input" onchange="handleFileUpload(event)" accept=".txt,.pdf,.doc,.docx">
+
+<script>
+    function handleFileUpload(event) {
+        const file = event.target.files[0];
+        // Aquí puedes realizar acciones con el archivo seleccionado, como enviarlo a un servidor o procesarlo en el lado del cliente.
+        console.log("Archivo seleccionado:", file);
+    }
+</script>
+
+</body>
+</html>
